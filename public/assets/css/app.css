@@ -893,7 +893,9 @@ footer {
     font-size: .85rem;
     display: flex;
     align-items: center;
-    transition: all .5s
+    transition: all .5s;
+    cursor:pointer;
+    user-select: none;
 }
 
 .sidebar-wrapper .menu .sidebar-link:hover span {
@@ -1032,7 +1034,8 @@ footer {
 }
 
 .card .card-body {
-    padding: 1.4rem 1.7rem
+    padding: 1.4rem 1.7rem;
+    overflow-x: auto;
 }
 
 .card .card-heading {
@@ -1453,12 +1456,22 @@ footer {
     background: #6c757d;
     min-height: 100vh;
     padding-top: 100px;
-    background-image: url(../images/background/auth.jpg)
+    background-image:url(../images/BUP_Lake.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 #auth .card {
     box-shadow: 0 5px 15px rgba(36, 104, 146, .6);
     border: none
+}
+
+#auth .card .loginCard img{
+    height: 50px;
+}
+
+#auth .card .loginCard h2{
+    text-shadow: 1px 1px  black;
 }
 
 #error {

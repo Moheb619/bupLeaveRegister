@@ -1,7 +1,27 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const DashboardAdmin = (props) => {
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   return (
     <>
       <Helmet>
@@ -57,7 +77,7 @@ const DashboardAdmin = (props) => {
               <li className="dropdown">
                 <a href="#" data-bs-toggle="dropdown" className="nav-link dropdown-toggle nav-link-lg nav-link-user">
                   <div className="avatar me-1">
-                    <img src="assets/images/admin.png" alt="" />
+                    <img src="/assets/images/admin.png" alt="" />
                   </div>
                   <div className="d-none d-md-block d-lg-inline-block">Hi, Admin</div>
                 </a>
@@ -69,9 +89,9 @@ const DashboardAdmin = (props) => {
                     <i data-feather="settings"></i> Settings
                   </a>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="login.html">
+                  <Link to="/" className="dropdown-item">
                     <i data-feather="log-out"></i> Logout
-                  </a>
+                  </Link>
                 </div>
               </li>
             </ul>
@@ -82,8 +102,8 @@ const DashboardAdmin = (props) => {
             <h3>Dashboard</h3>
           </div>
           <section className="section">
-            <div className="row mb-2">
-              <div className="col-xl-4 col-md-12 mb-4">
+            <motion.div variants={container} initial="hidden" animate="visible" className="row mb-2">
+              <motion.div variants={item} className="col-xl-4 col-md-12 mb-4">
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex justify-content-between p-md-1">
@@ -99,8 +119,8 @@ const DashboardAdmin = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-xl-4 col-md-12 mb-4">
+              </motion.div>
+              <motion.div variants={item} className="col-xl-4 col-md-12 mb-4">
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex justify-content-between p-md-1">
@@ -116,8 +136,8 @@ const DashboardAdmin = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>{" "}
-              <div className="col-xl-4 col-md-12 mb-4">
+              </motion.div>
+              <motion.div variants={item} className="col-xl-4 col-md-12 mb-4">
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex justify-content-between p-md-1">
@@ -133,8 +153,8 @@ const DashboardAdmin = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>{" "}
-              <div className="col-xl-4 col-md-12 mb-4">
+              </motion.div>
+              <motion.div variants={item} className="col-xl-4 col-md-12 mb-4">
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex justify-content-between p-md-1">
@@ -150,8 +170,8 @@ const DashboardAdmin = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>{" "}
-              <div className="col-xl-4 col-md-12 mb-4">
+              </motion.div>
+              <motion.div variants={item} className="col-xl-4 col-md-12 mb-4">
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex justify-content-between p-md-1">
@@ -167,8 +187,8 @@ const DashboardAdmin = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </section>
         </div>
       </div>
